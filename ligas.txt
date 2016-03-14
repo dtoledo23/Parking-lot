@@ -1,8 +1,0 @@
-
-librerias python sensores
-https://github.com/intel-iot-devkit/upm/tree/master/examples/python
-
-
-git branches
-
-https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
