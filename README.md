@@ -56,7 +56,7 @@ IOT internet of things:ss
 
 https://www.gitbook.com/book/theiotlearninginitiative/internetofthings101/details
 
-###__Parking Lot__
+##__Parking Lot__
 
 For the construction of this software, the Tecnologico de Monterrey Campus Gualadajara's parking lot was used as a prototype example. The parking lot in this campus consists in ten different areas with the following parking spaces:
 
