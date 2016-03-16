@@ -76,3 +76,40 @@ Entrance | 270
 The following image is the campus' parking lot divided by zones. 
 
 ![ParkingTec](http://i.imgur.com/L5xOqdS.png)
+
+##__How does it works?__
+
+###__Sensors__
+
+With the use of sensors, our program is able to detect the movement in front of them. This with the purpose of detecting wheter a car is exiting or entering a certain zone of the parking lot. 
+
+This way our main system is able to keep count of how many cars are currently in the parking lot; therefore, it will get the number of available spaces. By keeping the count, we are also able to classify zones' disponibility by colors. This way it is easier for the user to keep track of the empty spaces since the LCD brights in that certain color. This was made by setting a maximum and minimum of Flags and assigning a value to each color: 
+
+```Python 3
+#Limits
+MAX = 20
+MIN = 0
+
+#Limit flags
+
+RedFlag = 0
+YellowFlag = 10
+
+ # ------ LCD -------
+        #Red = 252, 18, 33
+        #Amarillo = 229, 220, 22
+        #Verde = 46, 254, 67
+
+    if(lugares <= RedFlag):
+        myLcd.setColor(252, 18, 3)
+
+    elif(lugares <= YellowFlag):
+        myLcd.setColor(229, 220, 22)
+
+    else:
+        myLcd.setColor(46, 254, 67)
+
+    messages = "Disponibles: " + str(lugares) + " "
+    myLcd.setCursor(0,0)
+    myLcd.write(messages)
+```
