@@ -73,3 +73,6 @@ Library | 269
 Cafeteria | 341 
 Entrance | 270
 
+The following image is the campus' parking lot divided by zones. 
+
+![ParkingTec](http://i.imgur.com/L5xOqdS.png)
