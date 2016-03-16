@@ -85,7 +85,7 @@ With the use of sensors, our program is able to detect the movement in front of 
 
 This way our main system is able to keep count of how many cars are currently in the parking lot; therefore, it will get the number of available spaces. By keeping the count, we are also able to classify zones' disponibility by colors. This way it is easier for the user to keep track of the empty spaces since the LCD brights in that certain color. This was made by setting a maximum and minimum of Flags and assigning a value to each color: 
 
-~~~
+~~~ python3
 #Limits
 MAX = 20
 MIN = 0
