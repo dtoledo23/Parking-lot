@@ -55,3 +55,21 @@ https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 IOT internet of things:ss
 
 https://www.gitbook.com/book/theiotlearninginitiative/internetofthings101/details
+
+###__Parking Lot__
+
+For the construction of this software, the Tecnologico de Monterrey Campus Gualadajara's parking lot was used as a prototype example. The parking lot in this campus consists in ten different areas with the following parking spaces:
+
+Zone | Parking Spaces
+---|:---:
+Medicine | 412
+Visitors | 237
+Congress Center | 288
+Residences | 230
+Civil Engineering | 291
+Engineering | 446
+Media | 229
+Library | 269
+Cafeteria | 341 
+Entrance | 270
+
