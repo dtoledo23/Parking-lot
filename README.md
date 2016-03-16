@@ -3,11 +3,11 @@
 
 ### A world in constant motion
 
-We live in a world where being able to do things faster has become a necessity to the point where even five minutes can feel like an eternity; this couple with the fact that finding a parking space is more difficult everyday due to the constant increase of traffic makes this tedious process take longer than what the world around us demands. With no way to be able to explore the entirety of a parking lot we begin to lose time that although it doesn’t seem a lot at the moment (normally not more than a couple minutes), it starts to add up costing us not only time, but gas as well in an activity which should be simpler.
+We live in a world where being able to do things faster has become a necessity to the point where even five minutes can feel like an eternity. This is related with the fact that finding a parking space is more difficult everyday due to the constant increase of traffic; therefore, it makes this a tedious process, taking longer than what the world around us demands. Having no way to be able to explore an entire parking lot, one begins to lose time by small amounts a day until it becomes a tremendous total when adding those minutes in a lifetime; however, gas is also wasted in the process.
 
 ### What is Parkify?
 
-Parkify is an application that aims to solve this parking problem so you are able to find a spot to park your car in a more efficient and effective way than by searching driving around. It is a simple solution which manages to separate a parking lot in different areas and tells you how many spaces are free in each of this areas. This way, looking for a parking spot can stop being a chore and become an easy step throughout the day.
+Parkify is an application that aims to solve this simple activity that takes one's precious time, so you are able to find a spot to park your car in faster an effective way than by searching around. It is a simple solution which manages to separate a parking lot in different zones and tells you how many spaces are free in each of this areas. Also, when Parkify gets to know you better, it will be able to priotize the closest empty parking zones near your destination. This way, looking for a parking spot can stop being a stressful chore and become an easy daily step.
 
 ### How Parkify is achieved
 
