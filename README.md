@@ -111,7 +111,7 @@ YellowFlag = 10
     
 ```
 
-Like previously mentioned, we also created a file which states when a request is invalid. This way, for example, if the user does not uses the application by 'get'. The program will display an invalid message to the user himself. This was done effectively by writting the next code in file [server.py](https://github.com/iotchallenge2016/development_card/blob/web-service/server.py"Github repository") :
+Like previously mentioned, we also created a file which states when a request is invalid. This way, for example, if the user does not uses the application by 'get'. The program will display an invalid message to the user himself. This was done effectively by writting the next code in file [server.py](https://github.com/iotchallenge2016/development_card/blob/web-service/server.py "Github repository") :
 
 ```python
 def api_sections():
@@ -126,7 +126,7 @@ def api_sections():
 @app.route('/sections/<sectionId>', methods = ['GET'])
 ```
 
-Afterwards, by creating a class inside [invalid_request.py](https://github.com/iotchallenge2016/development_card/blob/web-service/invalid_request.py"GitHub repository) and defining the needed information: 
+Afterwards, by creating a class inside [invalid_request.py](https://github.com/iotchallenge2016/development_card/blob/web-service/invalid_request.py "GitHub repository") and defining the needed information: 
 ```python
 from flask import jsonify
 
