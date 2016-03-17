@@ -1,7 +1,7 @@
 # Parkify
 ## The Application
 
-![Parkify](http://i.imgur.com/MKaZBnj.png)
+<img src="http://i.imgur.com/MKaZBnj.png" width="400"> 
 
 ### A world in constant motion
 
@@ -183,4 +183,4 @@ def get_closest_parking_section(self, dstNodeId, tolerance=5):
 ###__Algorithm__
 <p>In order to give the best performance to Parkify App, we connected each point of the campus and divided them in parking lot or buildings. This way the program search for empty spaces in the closest parking area to the user's destination inside the campus. For example, if the user is going to the Congress Center inside the campus, Parkify will beging by searching the availability inside such parking area. This way the user knows faster that there is or there is not an empty spot near to his destination. Therefore, if the parking area is full, Parkify will suggest the second closest area. For a better explanation of the algorithm please look foward to the next image: </p>
 _Green: Parking Area_ | _Yellow = Building_ | _Blue = Entrance_
-![Campus Algorithm](https://github.com/iotchallenge2016/Parking-lot/blob/master/Graph.png?raw=true)
+<img src="https://github.com/iotchallenge2016/Parking-lot/blob/master/Graph.png?raw=true" width="400"> 
