@@ -81,6 +81,7 @@ The following image is the campus' parking lot divided by zones.
 
 ##__How does it works?__
 
+###__Sensors__
 With the use of sensors, our program is able to detect the movement in front of them. This with the purpose of detecting wheter a car is exiting or entering a certain zone of the parking lot. This way our main system is able to keep count of how many cars are currently in the parking lot; therefore, it will get the number of available spaces. By keeping the count, we are also able to classify zones' disponibility by colors. This way it is easier for the user to keep track of the empty spaces since the LCD brights in that certain color: Red is not available, Yellow is half available and Green is more than half available. This was made by setting a maximum and minimum of Flags and assigning a value to each color: 
 
 ```python 
@@ -112,7 +113,7 @@ YellowFlag = 10
     myLcd.write(messages)
     
 ```
-
+###__Inside the program__
 Like previously mentioned, we also created a file which states when a request is invalid. This way, for example, if the user does not uses the application by 'get' the program will display an invalid message to the user himself. This was done effectively by writting the next code in file [server.py](https://github.com/iotchallenge2016/development_card/blob/web-service/server.py "Github repository") :
 
 ```python
@@ -178,3 +179,8 @@ def get_closest_parking_section(self, dstNodeId, tolerance=5):
 
 		return destinations
 ```
+
+###__Algorithm__
+<p>In order to give the best performance to Parkify App, we connected each point of the campus and divided them in parking lot or buildings. This way the program search for empty spaces in the closest parking area to the user's destination inside the campus. For example, if the user is going to the Congress Center inside the campus, Parkify will beging by searching the availability inside such parking area. This way the user knows faster that there is or there is not an empty spot near to his destination. Therefore, if the parking area is full, Parkify will suggest the second closest area. For a better explanation of the algorithm please look foward to the next image: </p>
+_Green: Parking Area_ | _Yellow = Building_ | _Blue = Entrance_
+![Campus Algorithm](https://github.com/iotchallenge2016/Parking-lot/blob/master/Graph.png?raw=true)
