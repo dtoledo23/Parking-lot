@@ -52,7 +52,7 @@ https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-man
 https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 
 
-IOT internet of things:ss
+IOT internet of things:
 
 https://www.gitbook.com/book/theiotlearninginitiative/internetofthings101/details
 
