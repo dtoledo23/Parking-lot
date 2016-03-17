@@ -21,7 +21,7 @@ The Intel Edison board will be utilizing a button to count a car occupying a new
  [First Functional](https://github.com/dtoledo23/development_card/blob/master/firstFunctional.py "GitHub Repository")
 
 #### Image Recognition
-We have implementated the use of a camera in order to be able to detect license plates and to identify the cars entering the parking lot area; however, this feature is still in progress. It will capture video constantly and will take a picture whenever a license plate enters its field of view and then it will save the image and restart the camera so it is ready to detect another plate. Though this implementation isn’t complete yet, a rough version of the code is found here:
+We have implemented the use of a camera in order to be able to detect license plates and to identify the cars entering the parking lot area; however, this feature is still in development. It will capture video constantly and will take a picture whenever a license plate enters its field of view and then it will save the image and restart the camera so it is ready to detect another plate. Though this implementation isn’t complete yet, a rough version of the code is found here:
 
 [Camara Test](https://github.com/dtoledo23/development_card/blob/master/cameraTest.py "GitHub Repository")
 ### Web service
@@ -82,7 +82,7 @@ The following image is the campus' parking lot divided by zones.
 ##__How does it works?__
 
 ###__Sensors__
-With the use of sensors, our program is able to detect the movement in front of them. This with the purpose of detecting wheter a car is exiting or entering a certain zone of the parking lot. This way our main system is able to keep count of how many cars are currently in the parking lot; therefore, it will get the number of available spaces. By keeping the count, we are also able to classify zones' disponibility by colors. This way it is easier for the user to keep track of the empty spaces since the LCD brights in that certain color: Red is not available, Yellow is half available and Green is more than half available. This was made by setting a maximum and minimum of Flags and assigning a value to each color: 
+Though the use of sensors, our program is able to detect the movement in front of them. This with the purpose of detecting wether a car is exiting or entering a certain zone of the parking lot. Thus our main system is able to keep count of how many cars are currently in the parking lot and use that to calculate the number of free spaces. By keeping the count, we are also able to classify zones' disponibility by colors, making it easier for the user to keep track of the empty spaces through the use of different hues in an LCD screen: Red is not available, Yellow is half available and Green is more than half available. This was made by setting a maximum and minimum of Flags and assigning a value to each color: 
 
 ```python 
 #Limits
@@ -114,7 +114,7 @@ YellowFlag = 10
     
 ```
 ###__Inside the program__
-Like previously mentioned, we also created a file which states when a request is invalid. This way, for example, if the user does not uses the application by 'get' the program will display an invalid message to the user himself. This was done effectively by writting the next code in file [server.py](https://github.com/iotchallenge2016/development_card/blob/web-service/server.py "Github repository") :
+As it was previously mentioned, a file that states when a request is invalid was created. With the purpose that if, for example, the user does not uses the application by 'get' the program will display an invalid message to the user himself. This was done effectively by writting the next code in file [server.py](https://github.com/iotchallenge2016/development_card/blob/web-service/server.py "Github repository") :
 
 ```python
 def api_sections():
@@ -129,7 +129,7 @@ def api_sections():
 @app.route('/sections/<sectionId>', methods = ['GET'])
 ```
 
-Afterwards, by creating a class inside [invalid_request.py](https://github.com/iotchallenge2016/development_card/blob/web-service/invalid_request.py "GitHub repository") and defining the needed information: 
+Afterwards, by creating a class inside [invalid_request.py](https://github.com/iotchallenge2016/development_card/blob/web-service/invalid_request.py "GitHub repository") and defining the needed information the request is set as invalid: 
 ```python
 from flask import jsonify
 
@@ -150,7 +150,7 @@ class InvalidRequest(Exception):
 		return rv
 ```
 
-We also made [graph.py](https://github.com/iotchallenge2016/development_card/blob/web-service/graph.py "GitHub Repository") in order to make the program possible to identify the structure of the parking lot. This way it localizes the entrances, sections, closest parking section to the user as well for the sections surrounding that section. This was by creating a Class named 'Graph' and defining the functions needed inside that class, for example, this is how we managed to make the program find the closest parking zone to the user in case he or she is in a hurry:
+The file [graph.py](https://github.com/iotchallenge2016/development_card/blob/web-service/graph.py "GitHub Repository") was also made in order to make it possible for the program to identify the structure of the parking lot. Hence it localizes the entrances, sections, closest parking section to the user as well for the sections surrounding that section. This was by creating a Class named 'Graph' and defining the functions needed inside that class, for example, this is how we managed to make the program find the closest parking zone to the user in case he or she is in a hurry:
 ```python
 def get_closest_parking_section(self, dstNodeId, tolerance=5):
 		paths = []
