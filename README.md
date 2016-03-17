@@ -16,45 +16,45 @@ This application was built from the ground up by utilizing an Intel Edison Board
 ### Intel Edison
 The Intel Edison board will be utilizing a button to count a car occupying a new space, a touch sensor to represent a car leaving a free space, and an LCD screen which lists the number of free parking spots and changes color between green, yellow, and red depending on this number, with green being more than half parking spaces available, yellow being half or less spaces available, and red when there is no availability left; The updates can only be received from the sensors after an interval of 0.05 seconds. The whole development for the Edison can be found in this link.
 
- https://github.com/dtoledo23/development_card/blob/master/firstFunctional.py
+ [First Functional](https://github.com/dtoledo23/development_card/blob/master/firstFunctional.py "GitHub Repository")
 
 #### Image Recognition
 We have implementated the use of a camera in order to be able to detect license plates and to identify the cars entering the parking lot area; however, this feature is still in progress. It will capture video constantly and will take a picture whenever a license plate enters its field of view and then it will save the image and restart the camera so it is ready to detect another plate. Though this implementation isn’t complete yet, a rough version of the code is found here:
 
-https://github.com/dtoledo23/development_card/blob/master/cameraTest.py
+[Camara Test](https://github.com/dtoledo23/development_card/blob/master/cameraTest.py "GitHub Repository")
 ### Web service
 We also included within the Intel Edison, we will be using its IP address to host a web server which will be used to display the main webpage of Parkify made utilizing a Materialize template as well as giving you the option to create your own parking space for the use of the application. The css and necessary scripts for it to run correctly can be found here as well as the server:
 
- https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/static/js/init.js
+ [Init.js](https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/static/js/init.js "GitHub Repository")
 
-https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/static/css/main.css
+[Main.css](https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/static/css/main.css "GitHub Repository")
 
-https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/server.py
+[Server](https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/server.py "GitHub Repository")
 
 The server will not only manage the webpage, but it will also be in charge of reading the initial state of the parking lot's areas of through a csv file through a loader py file, then we have a another py file that makes requests to the server and writes into the lcd of the Edison with the use of its sensors. Finally we have another file which states when a request is invalid.
 
-https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/invalid_request.py
+[Invalid Request](https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/invalid_request.py "GitHub Repository")
 
-https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/loader.py
+[Loader](https://github.com/iotchallenge2016/development_card/blob/950f8b029e6447204472b0a2a5b5659d0c9766be/loader.py "GitHub Repository")
 
-https://github.com/iotchallenge2016/Parking-lot/blob/55d001aade8c4c797b8b5044747d22ce86add645/requests_to_server.py
+[Requests to server](https://github.com/iotchallenge2016/Parking-lot/blob/55d001aade8c4c797b8b5044747d22ce86add645/requests_to_server.py "GitHub Repository")
 
 ## Resources
 Python sensor libraries:
 
-https://github.com/intel-iot-devkit/upm/tree/master/examples/python
+[Intel's Python example](https://github.com/intel-iot-devkit/upm/tree/master/examples/python "Intel's GitHub Repository")
 
 
 git branches:
 
-https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
+[Create a new branch with git and manage branches](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches "Kunena's GitHub Repository")
 
-https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+[Git Branching Basic: Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging "Git Webpage")
 
 
 IOT internet of things:
 
-https://www.gitbook.com/book/theiotlearninginitiative/internetofthings101/details
+[Internet of Things 101](https://www.gitbook.com/book/theiotlearninginitiative/internetofthings101/details "Gitbook")
 
 ##__Parking Lot__
 
