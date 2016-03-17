@@ -3,15 +3,18 @@
 This algorhitm implementation is adapted to the parking system of ITESM Campus Guadalajara,
 there are 10 sections for parking around the campus.
 
-![alt tag](https://github.com/iotchallenge2016/Parking-lot/blob/info/parkinglot.png)
-
+<p align="center">
+  <img src="https://github.com/iotchallenge2016/Parking-lot/blob/info/parkinglot.png"/>
+</p>
 
 The users need to find the best parking lot section according to their desination,wich is choosen 
 on the mobile app.For this reason we desingned the campus as a graph,wich includes the parking lot 
 sections and general areas of destination(Library,Gym,Enginnering Building).The objective is to find 
 the best place depending on the proximity and occupation
 
-![alt tag](https://github.com/iotchallenge2016/Parking-lot/blob/master/Graph.png)
+<p align="center">
+  <img src="https://github.com/iotchallenge2016/Parking-lot/blob/master/Graph.png"/>
+</p>
 
 Green nodes represent the parking lot sections,the yellow ones the destination areas and the 
 blue node is the entrance.Wich is the starting point in the graph.
