@@ -1,6 +1,8 @@
 # Parkify
 ## The Application
 
+![Parkify](http://i.imgur.com/Rcz4fwg.jpg =400x400)
+
 ### A world in constant motion
 
 We live in a world where being able to do things faster has become a necessity to the point where even five minutes can feel like an eternity. This is related with the fact that finding a parking space is more difficult everyday due to the constant increase of traffic; therefore, it makes this a tedious process, taking longer than what the world around us demands. Having no way to be able to explore an entire parking lot, one begins to lose time by small amounts a day until it becomes a tremendous total when adding those minutes in a lifetime; however, gas is also wasted in the process.
