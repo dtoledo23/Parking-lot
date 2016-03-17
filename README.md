@@ -1,7 +1,7 @@
 # Parkify
 ## The Application
 
-![Parkify](http://i.imgur.com/Rcz4fwg.jpg =400x400)
+![Parkify](http://i.imgur.com/MKaZBnj.png)
 
 ### A world in constant motion
 
