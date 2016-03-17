@@ -11,3 +11,6 @@ choosen on the mobile app.For this reason we desingned the campus as a graph,wic
 the parking lot sections and general areas of destination(Library,Gym,Enginnering Building).
 
 ![alt tag](https://github.com/iotchallenge2016/Parking-lot/blob/master/Graph.png)
+
+Green nodes represent the parking lot sections,the yellow ones the destination areas and the 
+blue node is the entrance.Wich is the strating point in the graph.
