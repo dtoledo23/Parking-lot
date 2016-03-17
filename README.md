@@ -79,11 +79,7 @@ The following image is the campus' parking lot divided by zones.
 
 ##__How does it works?__
 
-###__Sensors__
-
-With the use of sensors, our program is able to detect the movement in front of them. This with the purpose of detecting wheter a car is exiting or entering a certain zone of the parking lot. 
-
-This way our main system is able to keep count of how many cars are currently in the parking lot; therefore, it will get the number of available spaces. By keeping the count, we are also able to classify zones' disponibility by colors. This way it is easier for the user to keep track of the empty spaces since the LCD brights in that certain color. This was made by setting a maximum and minimum of Flags and assigning a value to each color: 
+With the use of sensors, our program is able to detect the movement in front of them. This with the purpose of detecting wheter a car is exiting or entering a certain zone of the parking lot. This way our main system is able to keep count of how many cars are currently in the parking lot; therefore, it will get the number of available spaces. By keeping the count, we are also able to classify zones' disponibility by colors. This way it is easier for the user to keep track of the empty spaces since the LCD brights in that certain color: Red is not available, Yellow is half available and Green is more than half available. This was made by setting a maximum and minimum of Flags and assigning a value to each color: 
 
 ```python 
 #Limits
@@ -113,4 +109,40 @@ YellowFlag = 10
     myLcd.setCursor(0,0)
     myLcd.write(messages)
     
+```
+
+Like previously mentioned, we also created a file which states when a request is invalid. This way, for example, if the user does not uses the application by 'get'. The program will display an invalid message to the user himself. This was done effectively by writting the next code in file [server.py](https://github.com/iotchallenge2016/development_card/blob/web-service/server.py"Github repository") :
+
+```python
+def api_sections():
+	if request.method == 'GET':
+		data = []
+		for result in mongo.db[COLLECTION_TO_USE].find():
+			data.append(result)
+		return Response(dumps(data), mimetype='application/json')
+	else:
+		raise InvalidUsage('Unsupported Method', 501)
+
+@app.route('/sections/<sectionId>', methods = ['GET'])
+```
+
+Afterwards, by creating a class inside [invalid_request.py](https://github.com/iotchallenge2016/development_card/blob/web-service/invalid_request.py"GitHub repository) and defining the needed information: 
+```python
+from flask import jsonify
+
+class InvalidRequest(Exception):
+	status_code = None
+	message = None
+	payload = None
+
+	def __init__(self, message, status_code, payload=None):
+		Exception.__init__(self)
+		self.message = message
+		self.status_code = status_code
+		self.payload = payload
+
+	def to_dic(self):
+		rv = dict(self.payload or ())
+		rv['message'] = self.message
+		return rv
 ```
