@@ -82,7 +82,7 @@ The following image is the campus' parking lot divided by zones.
 ##__How does it works?__
 
 ###__Sensors__
-Though the use of sensors, our program is able to detect the movement in front of them. This with the purpose of detecting wether a car is exiting or entering a certain zone of the parking lot. Thus our main system is able to keep count of how many cars are currently in the parking lot and use that to calculate the number of free spaces. By keeping the count, we are also able to classify zones' disponibility by colors, making it easier for the user to keep track of the empty spaces through the use of different hues in an LCD screen: Red is not available, Yellow is half available and Green is more than half available. This was made by setting a maximum and minimum of Flags and assigning a value to each color: 
+Through the use of sensors, our program is able to detect the movement in front of them. This with the purpose of detecting wether a car is exiting or entering a certain zone of the parking lot. Thus our main system is able to keep count of how many cars are currently in the parking lot and use that to calculate the number of free spaces. By keeping the count, we are also able to classify zones' disponibility by colors, making it easier for the user to keep track of the empty spaces through the use of different hues in an LCD screen: Red is not available, Yellow is half available and Green is more than half available. This was made by setting a maximum and minimum of Flags and assigning a value to each color: 
 
 ```python 
 #Limits
@@ -191,7 +191,61 @@ _A complementar_
 
 ###__The Web page__
 [Check out our Web page!](http://10.43.51.167:5000/ "Parkify Web")
-_A complementar_
+<p>A web page for the application was made so that those who are interested in how their parking lot is being used can see it on a visual represantion of a map. On the home page the user is prompted to use upload their lot through a .csv file containing their initial values for how the zones are filled at the moment. This is done with the following code in [loader.py](https://github.com/iotchallenge2016/development_card/blob/web-service/loader.py "GitHub Repository"):</p>
+
+```python
+    with open(csvURL, 'r') as csv:
+        for line in csv.readlines():
+            elements = line.strip().split(',')
+            if diff != int(elements[zone]):
+                ocpd = sum(values)
+                free = total - ocpd
+                json = json + toJSON(diff,free, total)
+                values = []
+                total = 0
+                diff = int(elements[zone])
+            values.append(int(elements[avlb]))
+            total += 1
+            
+    ocpd = sum(values)
+    free = total - ocpd
+    return json + toJSONfinal(diff,free, total) + "]"
+```
+
+<p>The webpage contains also trhee other tabs besides the main one; the first one is view, where the user is able to see in a map how the different zones are filled, represented with different colors, starting from dark red (full lot) and continuing into lighter tones of blue (empty lot). Not only os the representation made on the map, but also on cards beside it that will also be filled with this colors as well as giving the number of free place and percentage of how occupied the parking lot is and it updates every 5 seconds. This can be found in [loadCards.js](https://github.com/iotchallenge2016/development_card/blob/web-service/static/js/loadCards.js "GitHub Repository").</p>
+
+```javascript
+var html = "";
+		for (var i = data.length - 1; i >= 0; i--) {
+			html += "<div class='col s12'>";
+			var percentage = Math.round((data[i].max - data[i].capacity) / data[i].max * 100)
+			var color = "blue-grey lighten-1";
+			if (percentage > 90) {
+				color = "red darken-4"
+			} else if(percentage > 85) {
+				color = "red darken-2"
+			} else if(percentage > 70) {
+				color = "red"
+			} else if(percentage > 60) {
+				color = "red lighten-1"
+			} else if(percentage > 50) {
+				color = "purple darken-1"
+			} else if(percentage > 40) {
+				color = "blue-grey darken-1"
+			}
+			html += "<div class='card "+ color +"'>";
+			html += "<div class='card-content white-text'>";
+			html += "<div class='card-title'>" + data[i].section.replace("P_", "Estacionamiento ") + "</div>";
+			html += "<p>Lugares Disponibles: " + (data[i].max - (data[i].max - data[i].capacity)).toString() + "</p>";
+			html += "<p>Ocupación: " + percentage + "%</p>"
+			html += "</div>"
+			html += "</div>"
+			html += "</div>";
+		}
+		console.log('Refreshing')
+		$('#cards-container').html(html);
+```
+<p>In the next section "About Us" we have a short description of what Parkify is as well as what our objective is, followed by all the members comforming the team</p>
 
 ###__Model__
 _A complementar_
