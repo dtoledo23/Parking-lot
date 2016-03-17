@@ -146,3 +146,33 @@ class InvalidRequest(Exception):
 		rv['message'] = self.message
 		return rv
 ```
+
+We also made [graph.py](https://github.com/iotchallenge2016/development_card/blob/web-service/graph.py "GitHub Repository") in order to make the program possible to identify the structure of the parking lot. This way it localizes the entrances, sections, closest parking section to the user as well for the sections surrounding that section. This was by creating a Class named 'Graph' and defining the functions needed inside that class, for example, this is how we managed to make the program find the closest parking zone to the user in case he or she is in a hurry:
+```python
+def get_closest_parking_section(self, dstNodeId, tolerance=5):
+		paths = []
+		for i in self.find_entrances():
+			path = nx.dijkstra_path(self.g, i, dstNodeId)
+			while (self.g.node[path[-1]]['type'].upper() != 'PARKING'):
+				path.pop()
+			paths.append(path)
+
+		destinations = []
+		for i in xrange(0, len(paths)):
+			destinations.append(paths[i][-1])
+
+		for i in xrange(0,len(destinations)):
+			section = self.g.node[destinations[i]]['section']
+			free = float(section['capacity']) / section['max'] * 100
+			prevFound = [destinations[i]]
+			while (free < tolerance):
+				destinations[i] = self.find_neighbor_with_parking_spots(destinations[i], exclude=prevFound)
+				prevFound.append(destinations[i])
+				section = self.g.node[destinations[i]]['section']
+				free = float(section['capacity']) / section['max'] * 100
+
+		if len(destinations) == 1:
+			destinations = destinations[0]
+
+		return destinations
+```
