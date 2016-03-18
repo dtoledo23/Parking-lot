@@ -10,8 +10,8 @@ import json
 import pyupm_i2clcd as lcd
 
 #PIN numbers
-BUTTON_GPIO = 5      
-TOUCH_GPIO = 6  
+BUTTON_GPIO = 6   
+TOUCH_GPIO = 8 
 LED = 13   
 
 #Initialize Gpio objects
