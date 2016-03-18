@@ -90,8 +90,8 @@ while True:
     myLcd.setColor(red, green, 0)
 
     messages = "Disponibles: " + str(lugares) + " "
-    myLcd.setCursor(0,5)
-    myLcd.write("Zona A")
+    myLcd.setCursor(0,3)
+    myLcd.write("P_Entrance")
     myLcd.setCursor(1,0)
     myLcd.write(messages)
 
