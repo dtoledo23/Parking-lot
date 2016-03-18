@@ -10,8 +10,8 @@ import json
 import pyupm_i2clcd as lcd
 
 #PIN numbers
-BUTTON_GPIO = 5      
-TOUCH_GPIO = 6  
+BUTTON_GPIO = 6   
+TOUCH_GPIO = 8 
 LED = 13   
 
 #Initialize Gpio objects
@@ -39,13 +39,13 @@ lastButtonState = False
 lastTouchState = False
 
 
-r = requests.get("http://10.43.51.167:5000/sections/P_Entrance")
+r = requests.get("http://10.43.51.167:5000/sections/P_Residencias")
 content = json.loads(r.text)
 lugares = content['capacity']
 MAX = content['max']
 
-urlReserve = "http://10.43.51.167:5000/sections/P_Entrance/reserve/1"
-urlFree = "http://10.43.51.167:5000/sections/P_Entrance/free/1"
+urlReserve = "http://10.43.51.167:5000/sections/P_Residencias/reserve/1"
+urlFree = "http://10.43.51.167:5000/sections/P_Residencias/free/1"
 
 while True:
 
@@ -88,7 +88,7 @@ while True:
 
     messages = "Disponibles: " + str(lugares) + " "
     myLcd.setCursor(0,3)
-    myLcd.write("P_Entrance")
+    myLcd.write("P_Residencias")
     myLcd.setCursor(1,0)
     myLcd.write(messages)
 
