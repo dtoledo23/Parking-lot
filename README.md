@@ -46,6 +46,14 @@ Python sensor libraries:
 
 [Intel's Python example](https://github.com/intel-iot-devkit/upm/tree/master/examples/python "Intel's GitHub Repository")
 
+
+git branches:
+
+[Create a new branch with git and manage branches](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches "Kunena's GitHub Repository")
+
+[Git Branching Basic: Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging "Git Webpage")
+
+
 IOT internet of things:
 
 [Internet of Things 101](https://www.gitbook.com/book/theiotlearninginitiative/internetofthings101/details "Gitbook")
@@ -183,7 +191,9 @@ _A complementar_
 
 ###__The Web page__
 [Check out our Web page!](http://10.43.51.167:5000/ "Parkify Web")
-<p>A web page for the application was made so that those who are interested in how their parking lot is being used can see it on a visual represantion of a map. On the home page the user is prompted to use upload their lot through a .csv file containing their initial values for how the zones are filled at the moment. This is done with the following code in [loader.py](https://github.com/iotchallenge2016/development_card/blob/web-service/loader.py "GitHub Repository"):</p>
+A web page for the application was made so that those who are interested in how their parking lot is being used can see it on a visual represantion of a map. It was made utilizing the front-end framework materilize to give a better user experience. It is divided into four sections: Home, View, About Us, and Documentation.
+
+On the home page the user is prompted to upload their parking lot through a .csv file containing their initial values for how the zones are filled at the moment; reading each row in the document and identyfiyng the zone and the number of occupied and free spots in each of them. This is done with the following code in [loader.py](https://github.com/iotchallenge2016/development_card/blob/web-service/loader.py "GitHub Repository"):
 
 ```python
     with open(csvURL, 'r') as csv:
@@ -204,7 +214,7 @@ _A complementar_
     return json + toJSONfinal(diff,free, total) + "]"
 ```
 
-<p>The webpage contains also trhee other tabs besides the main one; the first one is view, where the user is able to see in a map how the different zones are filled, represented with different colors, starting from dark red (full lot) and continuing into lighter tones of blue (empty lot). Not only os the representation made on the map, but also on cards beside it that will also be filled with this colors as well as giving the number of free place and percentage of how occupied the parking lot is and it updates every 5 seconds. This can be found in [loadCards.js](https://github.com/iotchallenge2016/development_card/blob/web-service/static/js/loadCards.js "GitHub Repository").</p>
+The page _View_ is where the user is able to see in a map how the different zones are filled, represented with different colors, starting from dark red (full lot) and continuing into lighter tones of blue (empty lot). Not only os the representation made on the map, but also on cards beside it that will also be filled with this colors as well as giving the number of free place and percentage of how occupied the parking lot is and it updates every 5 seconds. This can be found in [loadCards.js](https://github.com/iotchallenge2016/development_card/blob/web-service/static/js/loadCards.js "GitHub Repository").
 
 ```javascript
 var html = "";
@@ -237,7 +247,7 @@ var html = "";
 		console.log('Refreshing')
 		$('#cards-container').html(html);
 ```
-<p>In the next section "About Us" we have a short description of what Parkify is as well as what our objective is, followed by all the members comforming the team</p>
+In the next section _About Us_ we have a short description of what Parkify is as well as what our objective is, followed by all the members in the team. Also in this page, a short video is includedin which we present the way the problem parkify is trying to solve and the solution we are offering. The last section, _Documentation_, holds a list of all the available commands that can be given to the application and what each of these is for, making it easy of the user to navigate and work in a way he sees fit.
 
 ###__Model__
 _A complementar_
