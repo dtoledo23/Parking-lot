@@ -46,14 +46,6 @@ Python sensor libraries:
 
 [Intel's Python example](https://github.com/intel-iot-devkit/upm/tree/master/examples/python "Intel's GitHub Repository")
 
-
-git branches:
-
-[Create a new branch with git and manage branches](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches "Kunena's GitHub Repository")
-
-[Git Branching Basic: Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging "Git Webpage")
-
-
 IOT internet of things:
 
 [Internet of Things 101](https://www.gitbook.com/book/theiotlearninginitiative/internetofthings101/details "Gitbook")
